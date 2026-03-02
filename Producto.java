@@ -11,4 +11,56 @@ public class Producto {
         this.precio = precio;
         this.stock = stock;
     }
+
+public String getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+   
+    public void setPrecio(double precio) {
+        if (precio >= 0) {
+            this.precio = precio;
+        }
+    }
+
+    
+    public void aumentarStock(int cantidad) {
+        if (cantidad > 0) {
+            stock += cantidad;
+        }
+    }
+
+    
+    public boolean disminuirStock(int cantidad) {
+        if (cantidad > 0 && cantidad <= stock) {
+            stock -= cantidad;
+            return true;
+        }
+        return false;
+    }
+
+    
+    public double calcularValorTotal() {
+        return precio * stock;
+    }
+
+    @Override
+    public String toString() {
+        return "Código: " + codigo +
+                " | Nombre: " + nombre +
+                " | Precio: " + precio +
+                " | Stock: " + stock;
+    }
 }
