@@ -59,5 +59,41 @@ public class Main {
                         System.out.println("Error al agregar unidades");
                     }
                     break;
+                case 3:
+                    System.out.print("Código: ");
+                    codigo = sc.nextLine();
 
+                    System.out.print("Cantidad a retirar: ");
+                    cantidad = sc.nextInt();
 
+                    if (inventario.retirarUnidades(codigo, cantidad)) {
+                        System.out.println("Venta realizada");
+                    } else {
+                        System.out.println("No se pudo realizar la operación");
+                    }
+                    break;
+
+                case 4:
+                    inventario.mostrarProductos();
+                    break;
+
+                case 5:
+                    inventario.mostrarBajoStock();
+                    break;
+
+                case 6:
+                    System.out.println("Valor total inventario: " +
+                            inventario.calcularValorInventario());
+                    break;
+
+                case 7:
+                    System.out.println("Saliendo...");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida");
+            }
+
+        } while (opcion != 7);
+    }
+}
